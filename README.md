@@ -20,7 +20,7 @@ This is a python implementation of the [pricklybird](https://github.com/ndornsei
 ```
 
 ## Documentation
-See the [docs/html](docs/html) folder of this reposity for documentation.
+See the [docs/html](https://github.com/ndornseif/pypricklybird/tree/main/docs/html) folder of the github reposity for documentation.
 
 ## Installation
 
