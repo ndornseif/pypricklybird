@@ -35,7 +35,7 @@ from pypricklybird.converter import (
     words_to_bytes,
 )
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 PRICKLYBIRD_VERSION = "v1"
 """Version of the pricklybird specification that this implementation complies with."""
