@@ -1,6 +1,6 @@
 """Convert binary data into a human friendly format.
 
-This is a python implementation of the [pricklybird][1] format.
+This is a python implementation of the [pricklybird][1] format `v1`.
 
 ## Usage
 ```python
@@ -37,11 +37,15 @@ from pypricklybird.converter import (
 
 __version__ = "1.0.0"
 
+PRICKLYBIRD_VERSION = "v1"
+"""Version of the pricklybird specification that this implementation complies with."""
+
 __all__ = [
     "CRC8_POLY",
     "CRC8_TABLE",
     "HASH_TABLE",
     "HASH_TABLE_SIZE",
+    "PRICKLYBIRD_VERSION",
     "WORDLIST",
     "CRCError",
     "DecodeError",

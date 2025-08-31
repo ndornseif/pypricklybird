@@ -6,7 +6,7 @@
 -----
 
 ## Overview 
-This is a python implementation of the [pricklybird](https://github.com/ndornseif/pricklybird) format.
+This is a python implementation of the [pricklybird](https://github.com/ndornseif/pricklybird) format version `v1`.
 
 ## Usage
 ```python
@@ -20,7 +20,7 @@ This is a python implementation of the [pricklybird](https://github.com/ndornsei
 ```
 
 ## Documentation
-See the [docs/html](https://github.com/ndornseif/pypricklybird/tree/main/docs/html) folder of the github reposity for documentation.
+See the [docs](https://github.com/ndornseif/pypricklybird/tree/main/docs) folder of the github reposity for documentation.
 
 ## Installation
 
