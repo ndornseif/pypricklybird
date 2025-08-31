@@ -54,7 +54,7 @@ types = [
   "pyright {args:.}",
 ]
 tests = "pytest --cov=pypricklybird --cov-report=term --doctest-modules {args:.}"
-docs = "pdoc -t ./docs/templates/ -o ./docs/html/ pypricklybird"
+docs = "pdoc -t ./pydoc-templates/ -o ./docs/ pypricklybird"
 fullbuild = ["fmt", "types", "tests", "docs", "hatch build"]
 
 [tool.hatch.build.targets.wheel]
