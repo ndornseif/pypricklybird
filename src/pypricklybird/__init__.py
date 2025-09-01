@@ -44,7 +44,11 @@ full standard implementation and CRC.
 '4243'
 
 Direct access to the `WORDLIST` used for mapping bytes to words,
-and the `HASH_TABLE` use to map words to bytes is also possible.
+and the `HASH_TABLE` use to map words to bytes is also possible.<br>
+The `word_hash` function relies of the fact that no two words in the
+wordlist share a fist, last letter pair.
+More information on the hash function can be found in the
+[`pricklybird`][1] repository.
 
 >>> from pypricklybird import WORDLIST, HASH_TABLE, word_hash
 >>> # Confirm that the word flux maps to the byte 0x43 in both directions.
@@ -71,6 +75,8 @@ pip install pypricklybird
 
 Documentation is generated using [pdoc](https://pdoc.dev/) and can be found
 [here](https://ndornseif.github.io/pypricklybird/).
+
+[1]: https://github.com/ndornseif/pricklybird?tab=readme-ov-file#word-lookup-hash-table
 
 """
 
