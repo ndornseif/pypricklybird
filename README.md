@@ -10,11 +10,12 @@
 ## Overview 
 
 [`pricklybird`](https://github.com/ndornseif/pricklybird) is a method for conversion of 
-arbitrary binary data into more human-friendly words, where each word represents a single byte.  
+arbitrary binary data into more human-friendly words,  
+where each word represents a single byte.  
 A CRC-8 checksum is attached to allow the detection of errors during decoding.  
 `0xDEADBEEF` becomes `turf-port-rust-warn-void`, for example.  
 
-`pypricklybird` is a python implementation `pricklybird` version `v1`.
+`pypricklybird` is a python implementation of `pricklybird` version `v1`.
 
 
 ## Documentation
