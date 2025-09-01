@@ -8,22 +8,63 @@
 -----
 
 ## Overview 
-This is a python implementation of the [pricklybird](https://github.com/ndornseif/pricklybird) format version `v1`.
+
+[`pricklybird`](https://github.com/ndornseif/pricklybird) is a method for conversion of 
+arbitrary binary data into more human-friendly words, where each word represents a single byte.  
+A CRC-8 checksum is attached to allow the detection of errors during decoding.  
+`0xDEADBEEF` becomes `turf-port-rust-warn-void`, for example.  
+
+`pypricklybird` is a python implementation `pricklybird` version `v1`.
+
+
+## Documentation
+
+Documentation is generated using [pdoc](https://pdoc.dev/) and can be found [here](https://ndornseif.github.io/pypricklybird/).
 
 ## Usage
+
+Basic conversion functions that fully comply with the specification and 
+include the CRC can be used as follows.
+
 ```python
 >>> from pypricklybird import convert_to_pricklybird, convert_from_pricklybird
 >>> data = bytearray.fromhex("4243")
 >>> code = convert_to_pricklybird(data);
->>> code
+>>> code # Notice the third word "full" used to encode the CRC.
 'flea-flux-full'
 >>> convert_from_pricklybird(code).hex()
 '4243'
 ```
 
-## Documentation
-Documentation is generated using [pdoc](https://pdoc.dev/) and can be found [here](https://ndornseif.github.io/pypricklybird/).
+It is also possible to map word to bytes and bytes to words without the 
+full standard implementation and CRC.
+The words are encoded as four bytes of ASCII compatible UTF-8, 
+since the wordlist contains no non ASCII characters and all words are four letters long.
 
+```python
+>>> from pypricklybird import words_to_bytes, bytes_to_words
+>>> data = bytearray.fromhex("4243")
+>>> words = bytes_to_words(data)
+>>> words # Notice that no CRC is attached
+['flea', 'flux']
+>>> words_to_bytes(words).hex()
+'4243'
+```
+
+Direct access to the `WORDLIST` used for mapping bytes to words, 
+and the `HASH_TABLE` use to map words to bytes is also possible.
+
+```python
+>>> from pypricklybird import WORDLIST, HASH_TABLE, word_hash
+>>> # Confirm that the word flux maps to the byte 0x43 in both directions.
+>>> word = "flux"
+>>> table_index = word_hash(word[0], word[-1]);
+>>> table_index
+603
+>>> byte_value = HASH_TABLE[table_index]
+>>> hex(byte_value)
+'0x43'
+```
 ## Installation
 
 ```console
