@@ -39,8 +39,6 @@ include the CRC can be used as follows.
 
 It is also possible to map word to bytes and bytes to words without the 
 full standard implementation and CRC.
-The words are encoded as four bytes of ASCII compatible UTF-8, 
-since the wordlist contains no non ASCII characters and all words are four letters long.
 
 ```python
 >>> from pypricklybird import words_to_bytes, bytes_to_words
