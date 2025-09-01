@@ -106,10 +106,10 @@ class TestConversion:
         [
             ("", "Converter did not error with empty input"),
             ("orca", "Converter did not error with too short input"),
-            ("a®¿a-orca", "Converter did not error with non ascii input"),
+            ("a®¿a-orca", "Converter did not error with non ASCII input"),
             (
                 "gäsp-risk-king-orca-husk",
-                "Converter did not error with non ascii input",
+                "Converter did not error with non ASCII input",
             ),
             (
                 "-risk-king-orca-husk",
